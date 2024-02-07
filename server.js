@@ -196,7 +196,7 @@ client.on('messageDelete', async message => { //メッセージ削除検知的�
   if(trmsgid[message.id]===undefined){ //キャッシュに削除されたメッセージのidがなければ除外
     return
   }else{
-    await client.channels.cache.get(message.channel.id).messages.cache.get(trmsgid[message.id]).delete() //キャッシュレスに存在するメッセージidからwebhookで送信したメッセージ取得して削除
+    await client.channels.cache.get(message.channel.id).messages.cache.get(trmsgid[message.id]).delete() //キャッシュに存在するメッセージidからwebhookで送信したメッセージ取得して削除
   }
 })
 client.on("interactionCreate", async (interaction) => {
